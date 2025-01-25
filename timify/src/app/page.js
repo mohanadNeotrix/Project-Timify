@@ -5,6 +5,7 @@ import Head from "next/head";
 export default function Home() {
   return (
     <>
+    mmmmiodd
       <Head>
         <title>Timify</title>
       </Head>
