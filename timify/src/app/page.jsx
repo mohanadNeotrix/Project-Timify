@@ -1,17 +1,21 @@
 import Image from "next/image";
 import Head from "next/head";
+import styles from './Home.module.css';
+import { DropdownComponent } from "./components/dropdownComponent";
 
 
 export default function Home() {
+
   return (
     <>
-   
       <Head>
         <title>Timify</title>
       </Head>
+
+      <header className={styles.header}>
+        <h1 className={styles.title}>Timify</h1>
+      </header>
       <div className="home-container">
-        <h1 className="title">Timify</h1>
-        {/* Your existing content */}
       </div>
     </>
   );
