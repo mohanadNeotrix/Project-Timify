@@ -1,0 +1,19 @@
+.timify-button {
+  background-color: white;
+  color: #BF574F;
+  border: 5px solid #72342E;
+  padding: 5px 50px;
+  border-radius: 80px;
+  cursor: pointer;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.button-icon {
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+}
+
+

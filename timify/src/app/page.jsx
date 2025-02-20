@@ -2,6 +2,7 @@ import Image from "next/image";
 import Head from "next/head";
 import styles from './Home.module.css';
 import { DropdownComponent } from "./components/dropdownComponent";
+import TimifyButton from  "./components/TimifyButton";
 
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
       </Head>
 
       <header className={styles.header}>
-        <h1 className={styles.title}>Timify</h1>
+        <TimifyButton/>
       </header>
       <div className="home-container">
       </div>
