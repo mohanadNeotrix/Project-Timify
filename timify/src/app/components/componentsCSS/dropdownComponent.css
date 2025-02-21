@@ -1,0 +1,24 @@
+.dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .dropdown-select {
+    width: 300px; /* Adjust the width as needed */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 0; /* Remove rounded edges */
+    color: #000; /* Change text color to black */
+    appearance: none;
+    background-color: #ffffff;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ccc" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer;
+  }
+  
+  .dropdown-select:focus {
+    border-color: #000000;
+    outline: none;
+  }

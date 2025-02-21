@@ -1,11 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import Head from "next/head";
 import styles from './Home.module.css';
 import { DropdownComponent } from "./components/dropdownComponent";
 import TimifyButton from  "./components/TimifyButton";
+import { useState } from "react";
+
+
 
 
 export default function Home() {
+
+  const [selectedOption, setSelectedOption] = useState("");
+  const options = ["Option 1", "Option 2", "Option 3"];
+
+  const handleSelect = (option) => {
+    setSelectedOption(option);
+    console.log("Selected option:", option); // Print the selected option
+  };
 
   return (
     <>
@@ -17,6 +30,9 @@ export default function Home() {
         <TimifyButton/>
       </header>
       <div className="home-container">
+        {/*This is just a showcase for the dropdown component*/}
+        <DropdownComponent list={options} onSelect={handleSelect} />
+        <p>Selected option: {selectedOption}</p>
       </div>
     </>
   );
