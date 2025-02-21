@@ -1,0 +1,160 @@
+/* General Overlay Styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.overlay-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.overlay-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #f00;
+}
+
+/* Label Styles */
+.label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input & Textarea Styles */
+.input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: border 0.2s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Grouping for Spacing */
+.group {
+    margin-bottom: 20px;
+}
+
+/* DatePicker Styling */
+.react-datepicker__input-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: border 0.2s ease;
+}
+
+.react-datepicker__input-container input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Time Picker Styling */
+.react-datepicker__time-container {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.react-datepicker__time-picker {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.react-datepicker__time-picker input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.react-datepicker__time-picker input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Dropdown (For Activity Type, Difficulty, etc.) */
+.react-dropdown-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: border 0.2s ease;
+}
+
+.react-dropdown-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Textarea for Description */
+textarea.input {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border 0.2s ease;
+}
+
+textarea.input:focus {
+    outline: none;
+    border-color: #007bff;
+}

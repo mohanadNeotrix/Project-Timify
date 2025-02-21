@@ -6,14 +6,13 @@ import styles from './Home.module.css';
 import { DropdownComponent } from "./components/dropdownComponent";
 import TimifyButton from  "./components/TimifyButton";
 import { useState } from "react";
-
-
-
+import CreateActivityOverlay from "./components/createActivityOverlay";
 
 export default function Home() {
 
   const [selectedOption, setSelectedOption] = useState("");
   const options = ["Option 1", "Option 2", "Option 3"];
+  const options4usif = ["usif1", "usif2", "usif3"];
 
   const handleSelect = (option) => {
     setSelectedOption(option);
@@ -26,13 +25,23 @@ export default function Home() {
         <title>Timify</title>
       </Head>
 
+
+
       <header className={styles.header}>
         <TimifyButton/>
       </header>
       <div className="home-container">
         {/*This is just a showcase for the dropdown component*/}
         <DropdownComponent list={options} onSelect={handleSelect} />
-        <p>Selected option: {selectedOption}</p>
+        <p>Selected option: {selectedOption}</p>  
+        <CreateActivityOverlay className="overlay"/>
+
+        <DropdownComponent list={options4usif} onSelect={handleSelect} />
+
+    
+
+
+
       </div>
     </>
   );

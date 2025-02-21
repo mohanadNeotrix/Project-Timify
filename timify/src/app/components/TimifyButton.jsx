@@ -1,5 +1,5 @@
 import React from "react";
-import './TimifyButton.css';
+import './componentsCSS/TimifyButton.css';
 
 const TimifyButton = () => {
   return (
