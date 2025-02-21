@@ -1,22 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './componentsCSS/createActivityOverlay.css';
-import { useState } from 'react';
 import { DropdownComponent } from './dropdownComponent';
 import DatePicker from 'react-datepicker';
-
+import 'react-datepicker/dist/react-datepicker.css';
 
 export default function CreateActivityOverlay() {
-
     const activityTypes = ["Class", "Exam/Test", "Study Session", "Other"];
     const difficulties = ["Easy", "Medium", "Hard", "Demon"];
     const repeatOptions = ["Never", "Daily", "Weekly", "Monthly"];
     const [selectedDate, setSelectedDate] = useState(null);
-    const [selectedTime, setSelectedTime] = useState(null);
-
-
-
-
-    
+    const [selectedTimeFrom, setSelectedTimeFrom] = useState(null);
+    const [selectedTimeTo, setSelectedTimeTo] = useState(null);
 
     return (
         <>
@@ -28,7 +22,6 @@ export default function CreateActivityOverlay() {
                     </div>
 
                     <div className="overlay-body">
-
                         <div className='group'/>
                         <label className='label'>Activity Name</label>
                         <input className='input' type='text' placeholder='Enter activity name'/>
@@ -42,7 +35,7 @@ export default function CreateActivityOverlay() {
                         <DropdownComponent list={difficulties} onSelect={(option) => console.log(option)}/>
 
                         <div className='group'/>
-                        <label className='label'>Date</label>
+                        <label className='label'>Activity Date</label>
                         <DatePicker
                             selected={selectedDate}
                             onChange={(date) => setSelectedDate(date)}
@@ -55,8 +48,8 @@ export default function CreateActivityOverlay() {
                         <label className='label'>Time</label>
                         <label className='label'>From</label>
                         <DatePicker
-                            selected={selectedTime}
-                            onChange={(time) => setSelectedTime(time)}
+                            selected={selectedTimeFrom}
+                            onChange={(time) => setSelectedTimeFrom(time)}
                             showTimeSelect
                             showTimeSelectOnly
                             timeIntervals={15}
@@ -67,8 +60,8 @@ export default function CreateActivityOverlay() {
                         />
                         <label className='label'>To</label>
                         <DatePicker
-                            selected={selectedTime}
-                            onChange={(time) => setSelectedTime(time)}
+                            selected={selectedTimeTo}
+                            onChange={(time) => setSelectedTimeTo(time)}
                             showTimeSelect
                             showTimeSelectOnly
                             timeIntervals={15}
@@ -85,8 +78,6 @@ export default function CreateActivityOverlay() {
                         <div className='group'/>
                         <label className='label'>Description</label>
                         <textarea className='input' placeholder='Enter description'/>
-                        
-
                     </div>    
                 </div>
             </div>
