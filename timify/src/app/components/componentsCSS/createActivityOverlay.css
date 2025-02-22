@@ -19,15 +19,20 @@
     width: 400px;
     max-width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 80%; /* Add this line */
+    overflow: hidden; /* Add this line */
+    display: flex; /* Add this line */
+    flex-direction: column; /* Add this line */
 }
 
 .overlay-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-bottom: 1px solid #eee;
     padding-bottom: 15px;
     margin-bottom: 20px;
+    position: relative; /* Ensure the close button is positioned relative to the header */
 }
 
 .overlay-header h2 {
@@ -35,14 +40,14 @@
     font-size: 24px;
     font-weight: 600;
     color: #333;
+    flex-grow: 1;
+    text-align: center;
 }
 
 .close-button {
-    background: none;
-    border: none;
-    font-size: 18px;
-    color: #333;
-    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 
 .close-button:hover {
@@ -51,8 +56,8 @@
 
 /* Label Styles */
 .label {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: bold; /* Changed to bold */
     color: #333;
     margin-bottom: 8px;
     display: block;
@@ -68,6 +73,7 @@
     margin-bottom: 20px;
     box-sizing: border-box;
     transition: border 0.2s ease;
+    color: #333;
 }
 
 .input:focus {
@@ -200,4 +206,10 @@ textarea.input {
 textarea.input:focus {
     outline: none;
     border-color: #007bff;
+}
+
+.overlay-body {
+    overflow-y: auto; /* Add this line */
+    flex-grow: 1; /* Add this line */
+    margin-top: 10px; /* Add this line */
 }

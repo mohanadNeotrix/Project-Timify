@@ -45,8 +45,8 @@ export default function CreateActivityOverlay() {
                         />
 
                         <div className='group'/>
-                        <label className='label'>Time</label>
-                        <label className='label'>From</label>
+                        <label className='label'>Activity Time</label>
+                        <label className='label'>From:</label>
                         <DatePicker
                             selected={selectedTimeFrom}
                             onChange={(time) => setSelectedTimeFrom(time)}
@@ -58,7 +58,7 @@ export default function CreateActivityOverlay() {
                             className='input'
                             placeholderText='Select a time'
                         />
-                        <label className='label'>To</label>
+                        <label className='label'>To:</label>
                         <DatePicker
                             selected={selectedTimeTo}
                             onChange={(time) => setSelectedTimeTo(time)}
