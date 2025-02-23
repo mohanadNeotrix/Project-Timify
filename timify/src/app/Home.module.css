@@ -11,9 +11,11 @@
 }
 
   
-  .homeContainer {
-    padding: 20px;
-  }
+.homeContainer {
+  width: 100%;
+  height: calc(100vh - 150px); /* Full height minus header height */
+  display: flex;
+}
   
   .title {
     font-size: 2rem;

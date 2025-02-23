@@ -4,7 +4,7 @@ import { DropdownComponent } from './dropdownComponent';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-export default function CreateActivityOverlay() {
+export default function CreateActivityOverlay({ onClose }) {
     const activityTypes = ["Class", "Exam/Test", "Study Session", "Other"];
     const difficulties = ["Easy", "Medium", "Hard", "Demon"];
     const repeatOptions = ["Never", "Daily", "Weekly", "Monthly"];
@@ -18,7 +18,7 @@ export default function CreateActivityOverlay() {
                 <div className="overlay-content">
                     <div className="overlay-header">
                         <h2>Create Activity</h2>
-                        <button className="close-button">X</button>
+                        <button className="close-button" onClick={onClose}>X</button>
                     </div>
 
                     <div className="overlay-body">
