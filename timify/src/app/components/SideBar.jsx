@@ -7,7 +7,9 @@ const Sidebar = ({ onAddButtonClick }) => {
         <div className="sidebar">
             <div className = "sidebarContent"> 
                 <button className="addButton" onClick={onAddButtonClick}>
+                    <div className="Circle">
                     +
+                    </div>
                 </button>
             </div>  
         </div>
