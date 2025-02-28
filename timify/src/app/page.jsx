@@ -13,9 +13,11 @@ export default function Home() {
 
   const [selectedOption, setSelectedOption] = useState("");
   const [isOverlayVisible, setIsOverlayVisible] = useState(false); 
+  const [activities, setActivities] = useState([]); // Store saved activities
   const options = ["Option 1", "Option 2", "Option 3"];
   const options4usif = ["usif1", "usif2", "usif3"];
 
+  
   const handleSelect = (option) => {
     setSelectedOption(option);
     console.log("Selected option:", option); // Print the selected option
@@ -25,6 +27,11 @@ export default function Home() {
   };
   const CloseOverlay = () => {
     setIsOverlayVisible(!isOverlayVisible); // Toggle overlay visibility
+  };
+  const handleSaveActivity = (newActivity) => {
+    setActivities([...activities, newActivity]); // Add to activity list
+    console.log("Saved Activities:", [...activities, newActivity]); // Debugging
+    setIsOverlayVisible(false); // Close overlay after saving
   };
 
   return (
@@ -41,11 +48,10 @@ export default function Home() {
 
         <div className={styles.homeContainer}>
           <Sidebar onAddButtonClick={toggleOverlay} /> {/* Pass toggle function as prop */}
-            {isOverlayVisible && <CreateActivityOverlay onClose={CloseOverlay} className="overlay" />}
+            {isOverlayVisible && <CreateActivityOverlay onClose={CloseOverlay} onSave={handleSaveActivity} className="overlay" />}
         
-          <div className={styles.mainContent}>
-
-           </div>
+            <div className={styles.mainContent}>
+            </div>
         </div>
         
         {/*This is just a showcase for the dropdown component*/}
@@ -63,8 +69,3 @@ export default function Home() {
     </>
   );
 }
-
- 
-
-
-   

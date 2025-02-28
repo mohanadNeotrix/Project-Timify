@@ -213,3 +213,42 @@ textarea.input:focus {
     flex-grow: 1; /* Add this line */
     margin-top: 10px; /* Add this line */
 }
+
+/* Buttons Container */
+.overlay-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* Confirm Button */
+  .confirm-button {
+    background-color: #bbfb8c;
+    color: black;
+    border: none;
+    padding: 10px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .confirm-button:hover {
+    background-color: #a7e07e;
+  }
+  
+  /* Cancel Button */
+  .cancel-button {
+    background-color: #f35060;
+    color: black;
+    border: none;
+    padding: 10px 28px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .cancel-button:hover {
+    background-color: #da4b5a;
+  }
