@@ -8,6 +8,7 @@ import TimifyButton from  "./components/TimifyButton";
 import { useState } from "react";
 import CreateActivityOverlay from "./components/createActivityOverlay";
 import Sidebar from "./components/Sidebar";
+import WeeklySchedule from "./components/WeeklySchedule";
 
 export default function Home() {
 
@@ -51,6 +52,7 @@ export default function Home() {
             {isOverlayVisible && <CreateActivityOverlay onClose={CloseOverlay} onSave={handleSaveActivity} className="overlay" />}
         
             <div className={styles.mainContent}>
+              <WeeklySchedule activities={activities} />
             </div>
         </div>
         
