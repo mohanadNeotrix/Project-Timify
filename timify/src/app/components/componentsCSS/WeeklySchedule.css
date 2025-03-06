@@ -175,3 +175,35 @@
     color: #555;
 }
 
+/* Week Navigation */
+.weekNavigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffb6c1;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.weekTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Navigation Buttons */
+.navButton {
+    background-color: #ff1744;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navButton:hover {
+    background-color: #d50000;
+}
+
+

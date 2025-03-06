@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./componentsCSS/WeeklySchedule.css";
-import { startOfWeek, eachDayOfInterval, addDays } from "date-fns";
+import { startOfWeek, eachDayOfInterval, addDays, subWeeks, addWeeks } from "date-fns";
 
 export default function WeeklySchedule({ activities }) {
-  const [currentWeek] = useState(new Date());
+  const [currentWeek, setCurrentWeek] = useState(new Date());
+
+  // Calculate the start and end of the current week
   const weekStart = startOfWeek(currentWeek, { weekStartsOn: 1 });
   const weekDays = eachDayOfInterval({
     start: weekStart,
@@ -12,8 +14,22 @@ export default function WeeklySchedule({ activities }) {
 
   const [selectedActivity, setSelectedActivity] = useState(null);
 
+  // Function to navigate weeks
+  const goToPreviousWeek = () => setCurrentWeek(subWeeks(currentWeek, 1));
+  const goToNextWeek = () => setCurrentWeek(addWeeks(currentWeek, 1));
+
   return (
     <div className="scheduleContainer">
+      {/* Week Navigation Buttons */}
+      <div className="weekNavigation">
+        <button className="navButton" onClick={goToPreviousWeek}>← Previous Week</button>
+        <h2 className="weekTitle">
+          {weekStart.toLocaleDateString("en-US", { month: "long", day: "numeric" })} - 
+          {addDays(weekStart, 6).toLocaleDateString("en-US", { month: "long", day: "numeric" })}
+        </h2>
+        <button className="navButton" onClick={goToNextWeek}>Next Week →</button>
+      </div>
+
       <div className="calendarGrid">
         {/* Time header row */}
         <div className="timeHeader">
@@ -42,7 +58,7 @@ export default function WeeklySchedule({ activities }) {
                     const timeTo = parseInt(a.timeTo, 10);
 
                     return (
-                      d.getDay() === day.getDay() &&
+                      d.toDateString() === day.toDateString() &&
                       !(timeTo <= j || timeFrom >= j + 1)
                     );
                   })
@@ -62,54 +78,31 @@ export default function WeeklySchedule({ activities }) {
 
       {selectedActivity && (
         <div className="activity-overlay">
-            <div className="activity-popup">
+          <div className="activity-popup">
             <div className="activity-popup-header">
-                <h2>{selectedActivity.name}</h2>
-                <button
-                className="activity-close-button"
-                onClick={() => setSelectedActivity(null)}
-                >
-                ✖
-                </button>
+              <h2>{selectedActivity.name}</h2>
+              <button className="activity-close-button" onClick={() => setSelectedActivity(null)}>✖</button>
             </div>
 
             <div className="activity-popup-body">
-                {/* Display Date & Day of the Week */}
-                <p>
+              <p>
                 <span className="activity-label">Date:</span>{" "}
                 {new Date(selectedActivity.date).toLocaleDateString("en-US", {
-                    weekday: "long", // Full day name (e.g., Monday)
-                    year: "numeric",
-                    month: "long", // Full month name (e.g., March)
-                    day: "numeric",
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
                 })}
-                </p>
-
-                <p>
-                <span className="activity-label">Type:</span>{" "}
-                {selectedActivity.type}
-                </p>
-                <p>
-                <span className="activity-label">Difficulty:</span>{" "}
-                {selectedActivity.difficulty}
-                </p>
-                <p>
-                <span className="activity-label">Time:</span>{" "}
-                {selectedActivity.fullTimeFrom} - {selectedActivity.fullTimeTo}
-                </p>
-
-                <p>
-                <span className="activity-label">Repeats:</span>{" "}
-                {selectedActivity.repeat}
-                </p>
-                <p>
-                <span className="activity-label">Description:</span>{" "}
-                {selectedActivity.description}
-                </p>
+              </p>
+              <p><span className="activity-label">Type:</span> {selectedActivity.type}</p>
+              <p><span className="activity-label">Difficulty:</span> {selectedActivity.difficulty}</p>
+              <p><span className="activity-label">Time:</span> {selectedActivity.fullTimeFrom} - {selectedActivity.fullTimeTo}</p>
+              <p><span className="activity-label">Repeats:</span> {selectedActivity.repeat}</p>
+              <p><span className="activity-label">Description:</span> {selectedActivity.description}</p>
             </div>
+          </div>
         </div>
-        </div>
-        )}
+      )}
     </div>
   );
 }
