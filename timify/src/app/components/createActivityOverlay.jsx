@@ -19,15 +19,21 @@ export default function CreateActivityOverlay({ onClose, onSave }) {
     const [description, setDescription] = useState('');
 
     const handleConfirm = () => {
-        const formatTime = (date) => date ? date.toLocaleTimeString([], { hour: '2-digit', hour12: false }) : null;
+        const formatHourOnly = (date) => 
+            date ? date.toLocaleTimeString([], { hour: "2-digit", hour12: false }) : null;
+    
+        const formatFullTime = (date) => 
+            date ? date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false }) : null;
     
         const newActivity = {
             name: activityName,
             type: selectedType,
             difficulty: selectedDifficulty,
             date: selectedDate,
-            timeFrom: formatTime(selectedTimeFrom),
-            timeTo: formatTime(selectedTimeTo),
+            timeFrom: formatHourOnly(selectedTimeFrom),  // Stores only the hour (e.g., "14")
+            timeTo: formatHourOnly(selectedTimeTo),
+            fullTimeFrom: formatFullTime(selectedTimeFrom), // Stores full time (e.g., "14:45")
+            fullTimeTo: formatFullTime(selectedTimeTo),
             repeat: selectedRepeat,
             description: description,
         };
