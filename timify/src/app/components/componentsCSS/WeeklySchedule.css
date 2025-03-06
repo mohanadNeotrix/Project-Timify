@@ -1,23 +1,26 @@
 /* WeeklySchedule.css */
 .scheduleContainer {
-    width:90%;
+    width: 90%;
     height: calc(100vh - 200px); /* Adjust this value if necessary */
     display: flex;
     flex-direction: column;
     background-color: #ffd1dc;
     padding: 40px;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
 }
 
+/* Grid layout for the calendar */
 .calendarGrid {
     flex: 1;
     display: grid;
-    grid-template-columns: 100px repeat(12, 1fr);
+    grid-template-columns: 100px repeat(24, 1fr); /* 24 columns for 24 time slots */
     background-color: #ffd1dc;
-    max-height: 100%; /* Ensure it does not exceed the container's height */
+    max-height: 100%;
 }
 
+/* Time header row */
 .timeHeader {
     grid-column: 1 / -1;
     display: grid;
@@ -26,39 +29,65 @@
     position: sticky;
     top: 0;
     z-index: 2;
-    font-weight: bold;
+    transform: translateX(-30px); /* Move it 10px left */
 }
 
+/* Day columns */
 .dayColumn {
-    display: contents;
+    display: contents; /* Allows children to align in the grid */
 }
 
+/* Sticky day headers */
 .dayHeader {
     position: sticky;
     left: 0;
     z-index: 1;
     background-color: #ffd1dc;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
+    padding: 2px;
 }
 
+/* Time header cells */
 .timeHeaderCell {
     padding: 10px;
     text-align: center;
     background: #ffd1dc;
+    font-size: 14px;
 }
 
+/* Individual time slots */
 .timeSlot {
-    min-height: 60px;
+    min-height: 20px; /* Adjust for better spacing */
     position: relative;
+    margin-top: 15px;
 }
 
+/* Activity card styling */
 .activityCard {
-    padding: 4px;
+    padding: 8px;
     margin: 2px;
-    background-color: #9E9E9E;
-    border-radius: 4px;
-    font-size: 0.9em;
-    color: white;
+    background-color: #000000;
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    left: 25%;
+}
+
+/* Colors based on difficulty */
+.easy {
+    background-color: #ffaaa6;
+}
+
+.medium {
+    background-color: #ff8a80;
+}
+
+.hard {
+    background-color: #ff5151;
+}
+
+.demon {
+    background-color: #ff1744;
 }

@@ -19,20 +19,23 @@ export default function CreateActivityOverlay({ onClose, onSave }) {
     const [description, setDescription] = useState('');
 
     const handleConfirm = () => {
+        const formatTime = (date) => date ? date.toLocaleTimeString([], { hour: '2-digit', hour12: false }) : null;
+    
         const newActivity = {
             name: activityName,
             type: selectedType,
             difficulty: selectedDifficulty,
             date: selectedDate,
-            timeFrom: selectedTimeFrom,
-            timeTo: selectedTimeTo,
+            timeFrom: formatTime(selectedTimeFrom),
+            timeTo: formatTime(selectedTimeTo),
             repeat: selectedRepeat,
             description: description,
         };
-
+    
         onSave(newActivity);  // Save the activity in the list
         onClose();  // Close the overlay
     };
+    
 
     return (
         <div className="overlay">
