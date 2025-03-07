@@ -1,3 +1,4 @@
+
 .dropdown {
     display: inline-block;
     position: relative;
@@ -8,7 +9,7 @@
     padding: 10px;
     font-size: 16px;
     border: 2px solid #000000;
-    border-radius: 0; /* Remove rounded edges */
+    border-radius: 6px; /* Remove rounded edges */
     color: #000; /* Change text color to black */
     appearance: none;
     background-color: #ffffff;
@@ -19,6 +20,15 @@
   }
   
   .dropdown-select:focus {
-    border-color: #000000;
+    border-color: #FFD1DC;
     outline: none;
   }
+
+  .dropdown-option {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdownoption:hover {
+    background-color: #ff0202 !important; /* Change this to the color you want */
+}
