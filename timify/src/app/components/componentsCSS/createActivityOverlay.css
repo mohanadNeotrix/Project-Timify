@@ -229,32 +229,30 @@ textarea.input:focus {
   
   /* Confirm Button */
   .confirm-button {
-    background-color: #bbfb8c;
+    background-color: #ffd1dc;
     color: black;
-    border: none;
     padding: 10px 30px;
     font-size: 14px;
     cursor: pointer;
     border-radius: 25px;
-    transition: background 0.3s ease-in-out;
+    transition:background 0.3s ease-in-out;
   }
   
   .confirm-button:hover {
-    background-color: #a7e07e;
+    background-color: #ff3266;
   }
   
   /* Cancel Button */
   .cancel-button {
-    background-color: #f35060;
+    background-color: #ff7c9d;
     color: black;
-    border: none;
     padding: 10px 28px;
-    font-size: 13px;
+    font-size: 14px;;
     cursor: pointer;
     border-radius: 25px;
     transition: background 0.3s ease-in-out;
   }
   
   .cancel-button:hover {
-    background-color: #da4b5a;
+    background-color: #ff3266;
   }

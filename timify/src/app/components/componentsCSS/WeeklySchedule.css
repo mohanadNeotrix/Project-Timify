@@ -1,11 +1,11 @@
 /* WeeklySchedule.css */
 .scheduleContainer {
     width: 90%;
-    height: calc(100vh - 200px); /* Adjust this value if necessary */
+    height: calc(100vh - 150px); /* Adjust this value if necessary */
     display: flex;
     flex-direction: column;
     background-color: #ffd1dc;
-    padding: 40px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow-x: auto; /* Enable horizontal scrolling if needed */
@@ -44,7 +44,7 @@
     z-index: 1;
     background-color: #ffd1dc;
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     padding: 2px;
 }
@@ -77,19 +77,19 @@
 
 /* Colors based on difficulty */
 .easy {
-    background-color: #ffaaa6;
+    background-color: #fbacbe;
 }
 
 .medium {
-    background-color: #ff8a80;
+    background-color: #fc8eac;
 }
 
 .hard {
-    background-color: #ff5151;
+    background-color: #e63946 ;
 }
 
 .demon {
-    background-color: #ff1744;
+    background-color: #8f2947;
 }
 
 /* General Overlay Styles */

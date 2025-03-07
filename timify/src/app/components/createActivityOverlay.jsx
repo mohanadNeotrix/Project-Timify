@@ -121,8 +121,8 @@ export default function CreateActivityOverlay({ onClose, onSave }) {
                     />
 
                     <div className="overlay-footer">
-                        <button className="confirm-button" onClick={handleConfirm}>Create</button>
                         <button className="cancel-button" onClick={onClose}>Cancel</button>
+                        <button className="confirm-button" onClick={handleConfirm}>Create</button>
                     </div>
                 </div>    
             </div>
