@@ -24,18 +24,23 @@ export default function CreateActivityOverlay({ onClose, onSave }) {
     
         const formatFullTime = (date) => 
             date ? date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false }) : null;
+
+        if (!selectedDate || !selectedTimeFrom || !selectedTimeTo) {
+            alert("Please fill in the required fields: Date, Time From, and Time To.");
+            return;
+        }
     
         const newActivity = {
-            name: activityName,
-            type: selectedType,
-            difficulty: selectedDifficulty,
-            date: selectedDate,
-            timeFrom: formatHourOnly(selectedTimeFrom),  // Stores only the hour (e.g., "14")
-            timeTo: formatHourOnly(selectedTimeTo),
-            fullTimeFrom: formatFullTime(selectedTimeFrom), // Stores full time (e.g., "14:45")
-            fullTimeTo: formatFullTime(selectedTimeTo),
-            repeat: selectedRepeat,
-            description: description,
+            name: activityName || 'Unnamed',
+            type: selectedType || 'Other',
+            difficulty: selectedDifficulty || 'Easy',
+            date: selectedDate ,
+            timeFrom: formatHourOnly(selectedTimeFrom) ,
+            timeTo: formatHourOnly(selectedTimeTo) ,
+            fullTimeFrom: formatFullTime(selectedTimeFrom) ,
+            fullTimeTo: formatFullTime(selectedTimeTo) ,
+            repeat: selectedRepeat || 'Never',
+            description: description || 'No description provided',
         };
     
         onSave(newActivity);  // Save the activity in the list
@@ -71,7 +76,7 @@ export default function CreateActivityOverlay({ onClose, onSave }) {
                     <DropdownComponent list={difficulties} onSelect={setSelectedDifficulty} />
 
                     <div className='group'/>
-                    <label className='label'>Activity Date</label>
+                    <label className='label'>Activity Date (Required) </label>
                     <DatePicker
                         selected={selectedDate}
                         onChange={setSelectedDate}
@@ -81,7 +86,7 @@ export default function CreateActivityOverlay({ onClose, onSave }) {
                     />
 
                     <div className='group'/>
-                    <label className='label'>Activity Time</label>
+                    <label className='label'>Activity Time (Required) </label>
                     <label className='label'>From:</label>
                     <DatePicker
                         selected={selectedTimeFrom}
